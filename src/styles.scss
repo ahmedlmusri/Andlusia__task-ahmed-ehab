@@ -49,6 +49,8 @@
     #wrapper {
         width: 59%!important;
         margin-left: 32%!important;
+        position: relative;
+        z-index: 5;
     }
 
     .radio__label{
@@ -61,5 +63,7 @@
     .footer {
         font-size: 12px;
         text-align: right!important;
+            position: absolute!important;
+            z-index: 1;
     }
 }
