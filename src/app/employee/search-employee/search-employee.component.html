@@ -12,7 +12,7 @@
 <div class="all__employee">
   <form class="all__employee--search__employe" #searchEmploye="ngForm" (ngSubmit)="submitData(searchEmploye)">
     <div class="row">
-      <div class="col-6">
+      <div class="col-md-6 col-sm-12">
         <div class="form-group m-t-40 row">
           <label class="col-12 col-form-label">
             {{"NAME" | translate | titlecase}}
@@ -28,7 +28,7 @@
 
         </div>
       </div>
-      <div class="col-6">
+      <div class="col-md-6 col-sm-12">
         <div class="form-group m-t-40 row">
           <label class="col-12 col-form-label">
             {{"DEPARTMENT" | translate | titlecase}}
@@ -59,32 +59,33 @@
 
     </div>
   </form>
-  <table class="table tabled-border">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col"> <input type="checkbox" (change)="selectAll()"></th>
-        <th scope="col">{{"EMPLOYEE_NAME" | translate | titlecase}}</th>
-        <th scope="col">{{"EMPLOYEE_CODE" | translate | titlecase}}</th>
-        <th scope="col">{{"DATE" | translate | titlecase}}</th>
-        <th scope="col">{{"DEPARTMENT" | translate | titlecase}}</th>
-        <th scope="col">{{"GENDER" | translate | titlecase}}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let employee of employees; let i = index">
-        <th scope="row"><input type="checkbox" name="checkbox{{i}}" [checked]="employee?.Selected"></th>
-        <td>{{employee.name}}</td>
-        <td>{{employee.code}}</td>
-        <td>{{employee.date}}</td>
-        <td>{{employee.department}}</td>
-        <td>{{employee.gender}}</td>
-      </tr>
-      <tr *ngIf="!employees.length">
-        <td class="text-center bg-white" colspan="6">
-          {{"NO_DATA_TO_BE_DISPLAYED" | translate | titlecase}}
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
+  <div class="all__employee--table__Scrolbar">
+    <table class="table tabled-border">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col"> <input type="checkbox" (change)="selectAll()"></th>
+          <th scope="col">{{"EMPLOYEE_NAME" | translate | titlecase}}</th>
+          <th scope="col">{{"EMPLOYEE_CODE" | translate | titlecase}}</th>
+          <th scope="col">{{"DATE" | translate | titlecase}}</th>
+          <th scope="col">{{"DEPARTMENT" | translate | titlecase}}</th>
+          <th scope="col">{{"GENDER" | translate | titlecase}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees; let i = index">
+          <th scope="row"><input type="checkbox" name="checkbox{{i}}" [checked]="employee?.Selected"></th>
+          <td>{{employee.name}}</td>
+          <td>{{employee.code}}</td>
+          <td>{{employee.date}}</td>
+          <td>{{employee.department}}</td>
+          <td>{{employee.gender}}</td>
+        </tr>
+        <tr *ngIf="!employees.length">
+          <td class="text-center bg-white" colspan="6">
+            {{"NO_DATA_TO_BE_DISPLAYED" | translate | titlecase}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

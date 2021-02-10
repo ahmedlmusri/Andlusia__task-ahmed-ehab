@@ -9,7 +9,11 @@
         color: #fff;
         background: #4088d8!important;
     }
-    
+    .all__employee--table__Scrolbar{
+        overflow-x: auto;
+        width: 100%;
+        
+    }
     button{
         margin: 0px 10px;
     }
